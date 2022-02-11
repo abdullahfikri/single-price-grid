@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background: hsl(204, 43%, 93%);
+  line-height: 1.6;
+  color: #fff;
+}
+
+#content {
+  height: 100vh;
+  position: relative;
+  background: inherit;
+}
+
+#content .container {
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: auto;
+}
+
+#content .container > div {
+  display: grid;
+  grid-template-areas:
+    "content content"
+    "payment ads";
+}
+
+#content .container > div div {
+  padding: 3rem;
+}
+
+/* Main content */
+#content .main-content {
+  grid-area: content;
+  background-color: #fff;
+  border-radius: 12px 12px 0 0;
+}
+
+#content .main-content h2 {
+  color: hsl(179, 62%, 43%);
+  margin-bottom: 1rem;
+}
+#content .main-content h4 {
+  color: hsl(71, 73%, 54%);
+  margin-bottom: 0.5rem;
+  font-size: 19px;
+}
+
+#content .main-content p {
+  color: #aaa;
+  font-size: 18px;
+}
+
+/* Payment */
+#content .payment {
+  grid-area: payment;
+  background: hsl(179, 62%, 43%);
+  border-bottom-left-radius: 12px;
+}
+
+#content .payment > h3 {
+  margin-bottom: 1rem;
+}
+
+#content .payment p {
+  display: flex;
+  align-items: center;
+}
+
+#content .payment p span:first-child {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 15px;
+}
+#content .payment p span:last-child {
+  opacity: 0.6;
+}
+
+#content .payment p {
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+#content .payment a {
+  background: hsl(71, 73%, 54%);
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0px 9px 12px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* Ads */
+#content .ads {
+  grid-area: ads;
+  background: hsl(179, 62%, 43%);
+  opacity: 0.7;
+  border-bottom-right-radius: 12px;
+}
+
+#content .ads h3 {
+  margin-bottom: 1rem;
+}
+
+#content .ads p {
+  font-size: 15px;
+  opacity: 0.6;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  #content {
+    height: auto;
+  }
+  #content .container {
+    width: auto;
+    padding: 8rem 5rem;
+  }
+  #content .container > div {
+    grid-template-areas:
+      "content"
+      "payment"
+      "ads";
+  }
+
+  #content .payment {
+    border-radius: unset;
+  }
+
+  #content .ads {
+    border-bottom-left-radius: 12px;
+  }
+}
+
+@media (max-width: 525px) {
+  #content .container {
+    padding: 4rem 2.5rem;
+  }
+
+  #content .container > div div {
+    padding: 2rem;
+  }
+}
